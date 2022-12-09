@@ -1,0 +1,3 @@
+[{ "id": "1", "text": "some bread", "isDone": false, "created": "22-12-07" },
+    { "id": "2", "text": "buy some cheese", "isDone": false, "created": "22-12-07" },
+    { "id": "3", "text": "take off the trash", "isDone": true, "created": "22-12-07" }]

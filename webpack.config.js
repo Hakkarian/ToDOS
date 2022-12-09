@@ -1,29 +1,37 @@
 const path = require('path');
-const miniCss = require('mini-css-extract-plugin');
-const htmlWebp = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     module: {
         rules: [
             {
-                test: /\.(s*)css$/,
-                use: [miniCss.loader, 'css-loader', 'sass-loader']
+                test: /\.scss$/i,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             },
             {
                 test: /\.js$/,
+                exclude: /node_modules/,
                 use: ['babel-loader']
             }
         ]
     },
-    plugins: [new miniCss({ filename: './style.css' }),
-            new htmlWebp({ template: './dist/index.html' })],
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'src/index.html'
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'styles.css'
+        })
+    ],
     devServer: {
-        port: 4420,
-        open: true
+        port: 4447,
+        open: true,
     }
+
 }
