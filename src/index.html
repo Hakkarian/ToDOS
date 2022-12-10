@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todos</title>
+    <title>ToDOS</title>
 </head>
 <body>
+    
+    <section class="section-timer">
+            <div class="div-pack">
+            <div class="left-div"><h1 class="todo-head">To</h1></div>
+            <div id="timer-1"></div>
+            <div class="right-div"><h1 class="todo-head">DOS</h1></div>
+            </div>
+    </section>
     <section class="section-form todo-container">
         <container class="todo-container">
             <form class="todo-form">
                 <label class="todo-form__label">
-                    <span class="todo-form__label-span">Text</span>
+                    <div class="todo-form__label-div">
+                        <span class="todo-form__label-span">Text</span>
+                    </div>
                     <input class="todo-form__label-input" type="text" name="text" placeholder="Please, enter some text...">
                 </label>
-                <button class="todo-form__button" type="submit">+ Add</button>
+                <button class="todo-form__button" type="submit"><span class="todo-form__span-plus">+</span> Add</button>
             </form>
         </container>
     </section>

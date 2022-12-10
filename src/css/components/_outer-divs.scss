@@ -1,0 +1,50 @@
+.div-pack {
+    display: flex;
+
+    &:hover {
+        .left-div {
+            background-color: steelblue;
+            transform: scale(100%);
+        }
+        .right-div {
+            background-color: red;
+            transform: scale(100%);
+        }
+    }
+}
+.left-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 325px;
+    height: 100px;
+    margin-right: 10px;
+    background-color: white;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    transform: scaleX(0);
+
+    transition: background-color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 250ms ease-in-out;
+
+}
+.right-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 325px;
+    height: 100px;
+    margin-left: 10px;
+    background-color: white;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    transform: scaleX(0);
+
+    transition: background-color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 250ms ease-in-out;
+}
+.todo-head {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: white;
+}

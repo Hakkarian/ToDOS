@@ -4,65 +4,33 @@
     font-weight: 100;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'Kanit-ExtraLight';
     src: url(/src/fonts/Kanit-ExtraLight.ttf);
     font-weight: 200;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'Kanit-Light';
     src: url(/src/fonts/Kanit-Light.ttf);
     font-weight: 300;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'Kanit-Regular';
     src: url(/src/fonts/Kanit-Regular.ttf);
     font-weight: 400;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'Kanit-Medium';
     src: url(/src/fonts/Kanit-Medium.ttf);
     font-weight: 500;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'Kanit-SemiBold';
     src: url(/src/fonts/Kanit-SemiBold.ttf);
     font-weight: 600;
     font-style: normal;
-}
-* {
-    box-sizing: border-box;
-    outline: none;
-}
-ul, ol, h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-img {
-    display: block;
-    max-width: 100%;
-}
-a {
-    text-decoration: none;
-}
-
-body {
-    background-color: rgb(106, 106, 106);
-    padding: 0;
-    margin: 0;
-
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: 0.03em;
 }

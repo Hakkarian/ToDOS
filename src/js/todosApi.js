@@ -3,12 +3,13 @@ export const createData = (text) => {
 }
 export const fetchData = () => {
     try {
-        return JSON.parse(localStorage.getItem('key')) || [];
+        return Promise.resolve(JSON.parse(localStorage.getItem('key')) || []);
     }
     catch {
-        console.log('error happened')
-        return [];
+        toastr.error('Error happened!')
+        return Promise.reject([]);
     }
+    return Promise.resolve()
 }
 export const updateData = (text) => {
     localStorage.setItem('key', JSON.stringify(text))
