@@ -20,7 +20,7 @@ export class Timer {
     }
     render() {
         this.timerSpan.textContent = this.value //moment('November 21st 2022, 18:20:52 pm').format('MMMM Do YYYY HH:mm:ss a)
-        this.value -= 1
+        this.value += 1
     }
     onStart() {
         this.timerID = setInterval(this.render.bind(this), 1000)

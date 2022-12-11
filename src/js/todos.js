@@ -130,6 +130,78 @@ fetchData().then(data => {
     render()
 }).catch(error => console.log(error))
 
+//-------Draggable
+
+// get all elements with the 'draggable-object' attribute
+var draggableObjects = document.querySelectorAll("[draggable-object]");
+
+draggableObjects.forEach(obj => {
+	
+    function getMouseOffset()
+    {
+    	var e = window.event;
+        
+      	// returns the distance in pixels the mouse cursor is offset from
+      	// the element's top left point on the x/y-axis
+        return {
+        	X: e.clientX - obj.offsetLeft,
+            Y: e.clientY - obj.offsetTop,
+        };
+    }
+    
+    var mouseOffsetX = 0,
+    	mouseOffsetY = 0;
+    
+  	// allow dragging of the element
+    function enableDrag()
+    {
+    	document.onmouseup = disableDrag;
+        document.onmousemove = dragElement;
+        
+      	// get the offset amount for the first mouse press for every drag
+        mouseOffsetX = getMouseOffset().X;
+        mouseOffsetY = getMouseOffset().Y;
+    }
+    
+    function dragElement()
+    {
+      	// get the window mouse co-ords
+    	var e = window.event;
+        e.preventDefault(); // get disables text highlighting during dragging
+        
+        var mouseX = e.clientX; // get mouse x/y
+        var mouseY = e.clientY;
+        
+      	// get new element co-ords offset from the mouse position
+        var newX = mouseX - mouseOffsetX;
+        var newY = mouseY - mouseOffsetY;
+        
+      	// move the element to the new position, while
+      	// also keeping visible within the document/window area
+        obj.style.left = Math.max(10, Math.min(newX, document.documentElement.clientWidth  - obj.offsetWidth  - 10)) + "px";
+        obj.style.top  = Math.max(10, Math.min(newY, document.documentElement.clientHeight - obj.offsetHeight - 10)) + "px";
+    }
+    
+  	// disable dragging of the element
+    function disableDrag()
+    {
+    	var e = window.event;
+        e.preventDefault();
+        
+        var mouseX = e.clientX;
+        var mouseY = e.clientY;
+        
+    	document.onmouseup = null;
+        document.onmousemove = null;
+    }
+    
+  	// enable dragging every time the mouse is pressed down
+  	// on the element
+    obj.onmousedown = enableDrag;
+    
+});
+
+
 
 list.addEventListener('click', debounce(onListClick, 200));
 form.addEventListener('submit', onSubmit);

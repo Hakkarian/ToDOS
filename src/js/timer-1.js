@@ -1,3 +1,3 @@
 import { Timer } from './Timer'
 
-const timer = new Timer({ selector: '#timer-1', value: 10 });
+const timer = new Timer({ selector: '#timer-1', value: 0 });

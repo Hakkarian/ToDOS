@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
 
-    &:hover {
+    &:hover, &:focus {
         .todo-form__button {
             transform: rotate(360deg);
         }
@@ -15,12 +15,18 @@
     display: flex;
 }
 .todo-form__label-span {
+
     margin-right: 5px;
+    padding: 3px;
+
+    @include font(15px, 500, 1, 0.03em, null);
 
     color: var(--white-color);
 
+    transform: scale(0);
 
-    transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 }
 .todo-form__label-div {
@@ -28,17 +34,24 @@
     align-items: center;
     justify-content: center;
     width: 100px;
+    height: 23px;
     margin-bottom: 3px;
-    margin-right: 10px;
+    margin-right: 20px;
     background-color: var(--alt-black);
 
     border-radius: 15px;
 
+    transform: translate(-110%);
+    
+    transition: transform 1000ms cubic-bezier(0.175, 0.885, 0.32, 4);
+
     &:hover {
         .todo-form__label-span {
-            transform: translateX(-100%);
+        transform: scale(100%);
         }
     }
+
+
 }
 .todo-form__label-input {
     width: 500px;
@@ -51,7 +64,9 @@
     transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     &::placeholder {
-        padding-right: 20px;
+        background-color: var(--white-color);
+        transform: translateY(0);
+        transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
         @include font(15px, 500, 1, 0.03em, null)
 
     }
@@ -59,6 +74,10 @@
         .todo-form__button {
         transform: translateX(-100%);
         }
+        &::placeholder {
+        transform: translateY(150%);
+        }
+
     }
 
 
