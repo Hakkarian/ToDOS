@@ -21,13 +21,26 @@
             color: var(--white-color);
         }
     }
+        @include font(20px, 400, 1.5, 0.03em, null);
+
+    @media screen and (max-width: 479px ) {
+        width: 400px;
+        height: 50px;
+    }
 }
 .modal-text {
     position: absolute;
     top: 50%;
     left: 50%;
+
+    @include font(20px, 400, 1.5, 0.03em, null);
+
     transform: translate(-55%, -100%);
     transition: color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    @media screen and (max-width: 479px ) {
+        @include font(15px, 400, 1.2, 0.03em, null);
+    }
 }
 .modal-button {
     background-color: var(--black-color);

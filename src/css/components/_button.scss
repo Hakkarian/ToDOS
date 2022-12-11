@@ -2,11 +2,26 @@ button {
     min-width: 100px;
     border-radius: 15px;
     border: none;
+
+    @include font(15px, 500, 1.5, 0.03em, var(--white-color));
+
     background-color: var(--black-color);
     color: var(--white-color);
     transition: color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275), 
         background-color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275), 
         border-radius 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    @media screen and (max-width: 479px) {
+        min-width: 50px;
+
+        @include font(12px, 500, 1, 0.03em, null);
+    }
+    @media screen and (max-width: 767px) {
+        min-width: 70px;
+
+        @include font(13px, 500, 1, 0.03em, null);
+    }
+        
 }
 .todo-form__button {
     transform: rotate(0);
