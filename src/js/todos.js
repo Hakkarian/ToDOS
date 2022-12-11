@@ -203,7 +203,7 @@ draggableObjects.forEach(obj => {
 
 
 
-list.addEventListener('click', debounce(onListClick, 200));
+list.addEventListener('click', onListClick);
 form.addEventListener('submit', onSubmit);
 modalButton.addEventListener('click', onClose)
 window.addEventListener('keydown', onModalEscape)
