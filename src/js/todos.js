@@ -4,7 +4,7 @@ import toastr from 'toastr';
 import { v4 as uuidv4 } from 'uuid';
 import 'basiclightbox/src/styles/main.scss'
 
-//axios library
+
 
 
 import '../css/style.scss';
