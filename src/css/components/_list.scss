@@ -1,5 +1,5 @@
 .section-list {
-    background-color: rgb(106, 106, 106);
+    background-color: var(--lighter-section);
 }
 
 .todo-list {
@@ -17,8 +17,8 @@
     margin-top: 20px;
 
     border-radius: 30px;
-    border: 1px solid gray;
-    background-color: white;
+    border: 1px solid var(--lighter-section);
+    background-color: var(--white-color);
 
     transition: color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
         background-color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
@@ -26,23 +26,23 @@
         box-shadow: 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);;
 
         &:hover, &:focus {
-            background-color: rgb(49, 49, 49);
+            background-color: var(--alt-black);
             border-radius: 100px 0;
-            box-shadow: 1px black 2px gray;
+            box-shadow: 1px var(--black-color) 2px var(--lighter-section);
             .todo-list__item-head {
-                color: white;
+                color: var(--white-color);
             }
             .todo-list__item-text {
-                color: white;
+                color: var(--white-color);
             }
             .todo-list__item-view {
-                background-color: steelblue;
-                color: white;
+                background-color: var(--blue-color);
+                color: var(--white-color);
                 border: none;
             }
             .todo-list__item-delete {
-                background-color: red;
-                color: white;
+                background-color: var(--red-color);
+                color: var(--white-color);
                 border: none;
             }
         }
@@ -64,9 +64,9 @@
 }
 .todo-list__item-view {
     margin-bottom: 10px;
-    border: 1px solid rgb(108, 108, 108);
-    background-color: white;
-    color: black;
+    border: 1px solid var(--lighter-section);
+    background-color: var(--white-color);
+    color: var(--black-color);
     transition: border-radius 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
         color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) background-color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
@@ -77,8 +77,8 @@
 }
 
 .todo-list__item-delete {
-    background-color: black;
-    color: white;
+    background-color: var(--black-color);
+    color: var(--white-color);
 
     transition: border-radius 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
         color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) background-color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);

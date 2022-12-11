@@ -4,6 +4,8 @@ import toastr from 'toastr';
 import { v4 as uuidv4 } from 'uuid';
 import 'basiclightbox/src/styles/main.scss'
 
+//axios library
+
 
 import '../css/style.scss';
 import { markup } from './Markup';
@@ -12,6 +14,7 @@ import { setLocalSt, getLocalSt, remLocalSt } from './localSt-try-catch';
 import { debounce } from './Debounce'
 import { createData, fetchData, updateData, deleteData } from './todosApi';
 import './Promises'
+import './Fetch'
 
 
 let items = [];
@@ -44,8 +47,9 @@ const addItem = (text) => {
 
 
 const toggleItem = (id) => {
+    const item = items.find(item => item.id === id)
     items = items.map(item => item.id === id ? { ...item, isDone: !item.isDone } : item)
-    updateData(items);
+    updateData(id, { ...item, isDone: !item.isDone }); //(id, { ...item, isDone: !item.isDone })
     console.table(items)
     console.log('My', id)
 }
@@ -63,9 +67,10 @@ const removeItem = (id) => {
         console.log(id)
         return item.id !== id
     });
-    deleteData(items)
-    render()
+    deleteData(id).then(() => {
+        render()
     toastr.success('ToDOS has been removed succesfully!')
+    })
 
 }
 
@@ -91,11 +96,6 @@ const onListClick = (e) => {
 }
 
 
-    fetchData().then(data => {
-        items = data
-    })
-
-
 
 const onSubmit = (e) => {
     e.preventDefault()
@@ -110,10 +110,12 @@ const onSubmit = (e) => {
         isDone: false,
         created: new Date()
     }
-    addItem(payload)
-    createData(items)
-    render();
+    createData(payload).then(newData => {
+        addItem(newData)
+        render();
+        input.value = '';
     toastr.success('New ToDOS has been created succesfully!')
+    })
 }
 
 const onClose = () => {

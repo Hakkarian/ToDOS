@@ -1,5 +1,5 @@
 .section-timer {
-    background-color: rgb(65, 65, 65);
+    background-color: var(--section-color);
 }
 #timer-1 {
     display: flex;
@@ -15,7 +15,7 @@
     width: 700px;
     height: 100px;
 
-    background-color: white;
+    background-color: var(--white-color);
     border-radius: 60px;
 
     
@@ -24,13 +24,13 @@
 
     &:hover, &:focus {
         border-radius: 0;
-        background-color: rgb(49, 49, 49);
+        background-color: var(--alt-black);
 
         .timer__span {
-            color: white;
+            color: var(--white-color);
         }
         .left-div {
-            background-color: steelblue;
+            background-color: var(--blue-color);
         }
     }
 }
@@ -38,10 +38,8 @@
 .timer__span {
     margin-top: 20px;
     margin-bottom: 10px;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: 0.03em;
+
+    @include font(16px, 500, 1.2, 0.03em, null);
 
     transition: color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275)
 }
@@ -50,8 +48,8 @@
     width: 150px;
     margin-bottom: 10px;
 
-    background-color: steelblue;
-    color: white;
+    background-color: var(--blue-color);
+    color: var(--white-color);
     transition: color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
             background-color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
             border-radius 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 800ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -61,8 +59,8 @@
     }
     
     &:disabled {
-        background-color: gray;
-        color: black;
+        background-color: var(--lighter-section);
+        color: var(--black-color);
         border-radius: 0;
         &:hover, &:focus {
             transform: translateX(10%);
@@ -73,8 +71,8 @@
     width: 150px;
     margin-bottom: 10px;
 
-    background-color: red;
-    color: white;
+    background-color: var(--red-color);
+    color: var(--white-color);
     
 
     transform: translateX(0);
@@ -87,8 +85,8 @@
         }
 
     &:disabled {
-        background-color: gray;
-        color: black;
+        background-color: var(--lighter-section);
+        color: var(--black-color);
         border-radius: 0;
 
         &:hover, &:focus {

@@ -1,44 +1,4 @@
-@font-face {
-    font-family: 'Kanit-Thin';
-    src: url(/src/fonts/Kanit-Thin.ttf);
-    font-weight: 100;
-    font-style: normal;
-}
 
-@font-face {
-    font-family: 'Kanit-ExtraLight';
-    src: url(/src/fonts/Kanit-ExtraLight.ttf);
-    font-weight: 200;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Kanit-Light';
-    src: url(/src/fonts/Kanit-Light.ttf);
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Kanit-Regular';
-    src: url(/src/fonts/Kanit-Regular.ttf);
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Kanit-Medium';
-    src: url(/src/fonts/Kanit-Medium.ttf);
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Kanit-SemiBold';
-    src: url(/src/fonts/Kanit-SemiBold.ttf);
-    font-weight: 600;
-    font-style: normal;
-}
 * {
     box-sizing: border-box;
     outline: none;
@@ -57,12 +17,9 @@ a {
 }
 
 body {
-    background-color: rgb(106, 106, 106);
+    background-color: var(--lighter-section);
     padding: 0;
     margin: 0;
 
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: 0.03em;
+    @include font(14px, 400, 1.2, 0.03em, null)
 }
