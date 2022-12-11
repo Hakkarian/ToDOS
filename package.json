@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://Hakkarian.github.io/ToDOS",
   "scripts": {
     "start": "webpack --mode=production",
     "dev": "webpack-dev-server --mode=development"
@@ -17,7 +18,6 @@
   "bugs": {
     "url": "https://github.com/Hakkarian/Webpack/issues"
   },
-  "homepage": "https://github.com/Hakkarian/Webpack#readme",
   "devDependencies": {
     "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
